@@ -34,14 +34,14 @@ This lab explores the weaknesses of network protocols (FTP, TELNET, SSH, HTTP) b
 - Used `enum4linux`, `rpcclient`, and `NetExec` to enumerate users on the vulnerable VM.
 
 ### 🔍 Discovered Usernames:
-admin
-root
-user
-guest
-test
-ftp
-apache
-mysql
-postgres
-www
-msfadmin
+-admin
+-root
+-user
+-guest
+-test
+-ftp
+-apache
+-mysql
+-postgres
+-www
+-msfadmin
