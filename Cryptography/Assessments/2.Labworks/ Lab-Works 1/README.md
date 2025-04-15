@@ -1,6 +1,6 @@
 # 🧪 Lab 1: Cryptographic Attacks - Brute Force & Traffic Analysis on Network Protocols
 
-**Name**: Adli Jaafar  
+**Name**: Muhammad Aabas  
 **Date**: March 18 (Edited April 9)  
 **Points**: 15  
 **Time Allocated**: 3 Hours  
