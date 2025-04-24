@@ -52,3 +52,5 @@ Scan open ports on the target system using `nmap`.
 
 ```bash
 nmap -sS -sV -T4 192.168.157.137
+
+![!\[alt text\](image.png)](screenshot/image.png)
