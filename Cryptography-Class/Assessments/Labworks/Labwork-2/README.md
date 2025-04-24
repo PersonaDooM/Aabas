@@ -158,10 +158,12 @@ john --format=raw-md5 --wordlist=password.txt hash.txt
 
 #### 🔎 Weakness Summary
 
-Area | Issue
-Authentication | Weak/missing passwords
-Hashing | Unsalted MD5 hashes
-Transmission | Unencrypted data in transit
+| Area          | Issue                      |
+|---------------|----------------------------|
+| Authentication | Weak/missing passwords     |
+| Hashing        | Unsalted MD5 hashes        |
+| Transmission   | Unencrypted data in transit|
+
 
 #### 🔧 Recommendations:
 
