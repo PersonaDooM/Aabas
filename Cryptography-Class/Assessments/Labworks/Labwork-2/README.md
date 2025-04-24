@@ -131,10 +131,14 @@ hash-identifier 5f4dcc3b5aa765d61d8327deb882cf99
 
 ### 4. 🧨 Offline Hash Cracking
 
-Used Hashcat to perform brute-force on the MD5 hash:
+Used `john the ripper` to perform brute-force on the MD5 hash:
+
+### 🧠 John is picky about formats
+John tries to guess the format from the structure of the hash. If it doesn’t recognize it, or the structure is too simple (like plain MD5), you must manually tell John what it is, using:
 
 ```bash
-hashcat -m 0 hash.txt --show > result.txt
+john --format=raw-md5 --wordlist=password.txt hash.txt
+
 ```
 
 ✅ **Result:**
@@ -142,7 +146,7 @@ hashcat -m 0 hash.txt --show > result.txt
 5f4dcc3b5aa765d61d8327deb882cf99:password
 ```
 
-![hashcatresult](Screenshots/hashcatresult.png)
+![john](image.png)
 
 **Cracked Password**: `password`
 
