@@ -84,15 +84,10 @@ SHOW TABLES;
 
 **Expected Output:**
 
-```diff
-+----------------+
-| Tables_in_dvwa |
-+----------------+
-| guestbook      |
-| users          |
-+----------------+
-```
+![table dvwa](screenshot/table.png)
+
 **Querying user data:**
+
 ```sql
 SELECT * FROM users;
 ```
@@ -100,7 +95,7 @@ SELECT * FROM users;
 - Found usernames and MD5 password hashes.
 - Selected user admin for cracking.
 
-![usernpass](Screenshots/usernpass.png)
+![users](screenshot/users.png)
 
 **Saved hash to file:**
 
@@ -110,7 +105,7 @@ echo "5f4dcc3b5aa765d61d8327deb882cf99" > hash.txt
 
 > ⚠️ **Reflection Question**:  
 > Is accessing a database with no password a cryptographic failure?  
-> ✅ **Yes**. It violates secure authentication practices by allowing unauthorized access due to missing or weak credentials.
+> ✅ Absolutely — it violates basic secure authentication practices.
 
 ---
 
@@ -124,24 +119,26 @@ hash-identifier 5f4dcc3b5aa765d61d8327deb882cf99
 
 - Detected as **MD5** hash.
 
-![hashidentifier](Screenshots/hashidentifier.png)
+![hash indentify](screenshot/hash_indentify.png)
 
-> ⚠️ **Reflection Question**:  
-> What cryptographic weaknesses exist in this hashing method?  
-> - MD5 is **unsalted** and **fast**, making it susceptible to rainbow table and brute-force attacks.
+> ⚠️ **Reflection**:  
+> Why is MD5 considered insecure? 
+> - It’s fast and unsalted, making it highly vulnerable to rainbow tables and brute-force attacks.
+
+
 
 ---
 
 ### 4. 🧨 Offline Hash Cracking
 
-Used **hashcat** to brute-force the MD5 hash:
+Used Hashcat to perform brute-force on the MD5 hash:
 
 ```bash
-hashcat -m 0 hash.txt --show > cracked_results.txt
+hashcat -m 0 hash.txt --show > result.txt
 ```
 
 ✅ **Result:**
-```text
+```makefile
 5f4dcc3b5aa765d61d8327deb882cf99:password
 ```
 
@@ -149,29 +146,27 @@ hashcat -m 0 hash.txt --show > cracked_results.txt
 
 **Cracked Password**: `password`
 
-> Password entropy is low. "password" is one of the most common weak passwords.
+> This is one of the most common weak passwords — easily guessable and widely used.
 
 ---
 
 ### 5. 🔐 Cryptographic Analysis & Mitigation
 
-#### 🔎 Identified Weaknesses:
+#### 🔎 Weakness Summary
 
-| Component     | Issue                         |
-|---------------|-------------------------------|
-| Authentication | Empty/Weak passwords          |
-| Hashing        | MD5 without salt              |
-| Transmission   | Plaintext over network        |
+Area | Issue
+Authentication | Weak/missing passwords
+Hashing | Unsalted MD5 hashes
+Transmission | Unencrypted data in transit
 
 #### 🔧 Recommendations:
 
-- **Authentication**: Enforce strong password policies, apply rate-limiting or use `fail2ban`.
-- **Hashing**: Replace MD5 with **bcrypt** or **Argon2** (both are memory-hard and slow).
-- **Transmission**: Enable **SSL/TLS** encryption for database connections.
+- **Authentication**: Enforce password complexity rules and use rate limiting (`fail2ban`, `CAPTCHA`).
+- **Hashing**: Replace MD5 with bcrypt, scrypt, or Argon2.
+- **Transmission**: Use **TLS/SSL** for all database connections.
 
 #### 🕵️ Wireshark Observation:
-
-Captured raw data during database login. Password hashes and queries visible in plaintext.
+Traffic captured showed unencrypted SQL queries and sensitive data in transit.
 
 ![wireshark](Screenshots/wirehark.png)
 
@@ -179,15 +174,11 @@ Captured raw data during database login. Password hashes and queries visible in 
 
 ## ✅ Conclusion
 
-This lab demonstrated real-world cryptographic vulnerabilities that still exist in poorly configured systems. Weak authentication, outdated hashing, and unencrypted transmissions can all be exploited easily by attackers.
+This lab exercise demonstrated the serious risks posed by outdated cryptographic practices in modern systems. Weak credentials, insecure hashing algorithms, and lack of encrypted communication can all be exploited.
 
-Securing such systems involves:
-- Enforcing authentication best practices,
-- Adopting strong, salted password hashing,
-- Ensuring secure encrypted communication channels.
+To secure such systems:
+- Enforce strict password and authentication policies.
+- Use modern, slow, and salted hashing algorithms.
+- Encrypt all traffic between clients and servers.
 
-**Always audit legacy systems for these cryptographic flaws.** 🔐
-
----
-
-🧠 *"Attack like a black hat. Defend like a white hat."* – Haiqal
+🔒 **Legacy systems should always be reviewed for cryptographic flaws.**
