@@ -168,8 +168,8 @@ Transmission | Unencrypted data in transit
 #### 🕵️ Wireshark Observation:
 Traffic captured showed unencrypted SQL queries and sensitive data in transit.
 
-![wireshark](Screenshots/wirehark.png)
 
+![wireshark](screenshot/wireshark.png)
 ---
 
 ## ✅ Conclusion
