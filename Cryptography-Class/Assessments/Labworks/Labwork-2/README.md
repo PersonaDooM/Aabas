@@ -54,4 +54,3 @@ Scan open ports on the target system using `nmap`.
 nmap -sS -sV -T4 192.168.157.137
 ```
 
-![!\nmap scanning\](image.png)](screenshot/nmap_scan.png)
