@@ -168,6 +168,7 @@ Transmission | Unencrypted data in transit
 #### 🕵️ Wireshark Observation:
 Traffic captured showed unencrypted SQL queries and sensitive data in transit.
 
+- run wireshark then open users from dvwa mysql table.
 
 ![wireshark](screenshot/wireshark.png)
 ---
