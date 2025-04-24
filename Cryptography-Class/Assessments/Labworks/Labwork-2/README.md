@@ -37,8 +37,8 @@ In this lab, we’ll simulate a real-world cryptographic attack involving the di
 
 ## 🌐 Lab Network Setup
 
-- **Attacker IP:** `192.168.106.130`  
-- **Target IP:** `192.168.106.138`
+- **Attacker IP:** `192.168.157.142` (Kali Linux) 
+- **Target IP:** `192.168.157.137` (Metasploitable2)
 
 Ensure both virtual machines are on the same NAT/Bridged network to interact properly.
 
@@ -51,4 +51,4 @@ Ensure both virtual machines are on the same NAT/Bridged network to interact pro
 Scan open ports on the target system using `nmap`.
 
 ```bash
-nmap -sS -sV -T4 192.168.106.138
+nmap -sS -sV -T4 192.168.157.137
