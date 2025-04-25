@@ -1,6 +1,6 @@
 # 🔐 Lab 2: Cryptographic Attacks – Cracking Weak Password Hashes & Exploiting Poor Authentication in Databases
 
-**👨‍💻 Author**: Raja Muhammad Haiqal Shah Bin Raja Muzairil Shah  
+**👨‍💻 Author**: Muhammad Aabas Bin Md Suji  
 **📅 Date**: 25 April 2025  
 **⏳ Time Allocation**: 3 Hours  
 **📝 Total Marks**: 15  
