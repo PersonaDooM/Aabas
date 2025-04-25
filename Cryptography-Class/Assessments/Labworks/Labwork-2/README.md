@@ -1,30 +1,34 @@
-# 🔐 Lab 2: Cryptographic Attacks – Cracking Weak Password Hashes & Exploiting Poor Authentication in Databases
+# 🧪 Lab 2: Cryptographic Attacks – Breaking Weak Hashes & Investigating Poor Database Authentication
 
-**👨‍💻 Author**: Muhammad Aabas Bin Md Suji  
-**📅 Date**: 25 April 2025  
-**⏳ Time Allocation**: 3 Hours  
-**📝 Total Marks**: 15  
-**🧩 Lab Type**: Hands-On + Report + Demo/Debrief  
-
----
-
-## 🧠 A. Lab Objectives
-
-1. Identify and exploit cryptographic weaknesses in database authentication and password storage.
-2. Perform offline hash cracking after discovering password hashes in a vulnerable database.
-3. Investigate real-world cryptographic failures and propose secure solutions.
-4. Document findings clearly in GitHub (Markdown) and present a short demo/debrief.
+**👨‍🏫 Student Name**: Muhammad Aabas Bin Md Suji  
+**📅 Lab Date**: 25 April 2025  
+**⏰ Duration**: Approximately 3 Hours  
+**📊 Total Score**: 15 Marks  
+**🧠 Lab Format**: Practical Exercise + Report Writing + Presentation/Debrief
 
 ---
 
-## 🛠️ Tools Used
+## 🎯 A. Objectives
 
-- `Kali Linux` (OS)
-- `nmap` (Service enumeration)  
-- `mysql-client` (Database access)  
-- `hashid` / `hash-identifier` (Hash detection)  
-- `hashcat` / `john` (Hash cracking)  
-- `wireshark` (Traffic analysis – optional)
+This lab is designed to help students:
+
+1. Explore and exploit common cryptographic flaws in authentication systems.
+2. Extract and crack password hashes stored insecurely in a vulnerable database.
+3. Understand the impact of real-world cryptographic misconfigurations.
+4. Present findings clearly through GitHub Markdown and a short live explanation/demo.
+
+---
+
+## 🔧 B. Tools and Resources
+
+The following tools were used to complete this lab:
+
+- `Kali Linux` – Main penetration testing environment  
+- `nmap` – To identify open ports and services  
+- `mysql-client` – For interacting with the MySQL server  
+- `hashid` – To detect hash types  
+- `john the ripper` – For cracking password hashes  
+- `wireshark` – Optional tool to inspect network traffic for plaintext credentials (bonus)
 
 ---
 
