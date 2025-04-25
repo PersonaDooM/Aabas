@@ -118,8 +118,14 @@ echo "5f4dcc3b5aa765d61d8327deb882cf99" > hash.txt
 ```
 
 > ⚠️ **Reflection Question**:  
-> Is accessing a database with no password a cryptographic failure?  
-> ✅ Absolutely — it violates basic secure authentication practices.
+> 1. Is accessing a database with no password a cryptographic failure?  
+> ✅ Absolutely
+>
+> 2. Explain how this violates secure cryptographic authentication 
+> principles.
+> ✅ Secure systems should use something secret, like a password, to 
+> check who you are.
+
 
 ---
 
