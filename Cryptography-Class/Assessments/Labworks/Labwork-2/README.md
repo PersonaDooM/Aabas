@@ -62,9 +62,9 @@ ERROR 2026 (HY000): TLS/SSL error: wrong version number
 ### 🔍 What's actually going wrong?
 By default, modern MySQL clients try to connect using SSL/TLS.
 But:
->If the server is old (e.g. MySQL 5.5 or earlier), it might not support TLS properly.
->If SSL is not configured on the server, the client handshake will fail.
->If the client expects TLS 1.2+, and the server doesn't support it, you get a mismatch.
+- If the server is old (e.g. MySQL 5.5 or earlier), it might not support TLS properly.
+- If SSL is not configured on the server, the client handshake will fail.
+- If the client expects TLS 1.2+, and the server doesn't support it, you get a mismatch.
 
 **Solution:**
 
