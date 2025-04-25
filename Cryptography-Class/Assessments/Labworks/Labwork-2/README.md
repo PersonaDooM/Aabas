@@ -166,7 +166,7 @@ john --format=raw-md5 --wordlist=password.txt hash.txt
 5f4dcc3b5aa765d61d8327deb882cf99:password
 ```
 
-![john](image.png)
+C:\Users\aabas\OneDrive - Accord Investments\Documents\Aabas\Aabas\Cryptography-Class\Assessments\Labworks\Labwork-2\screenshot\john.png
 
 **Cracked Password**: `password`
 
