@@ -162,8 +162,8 @@ john --format=raw-md5 --wordlist=password.txt hash.txt
 ```
 
 ✅ **Result:**
-```makefile
-5f4dcc3b5aa765d61d8327deb882cf99:password
+```bash
+:password
 ```
 
 ![john](screenshot/john.png)
