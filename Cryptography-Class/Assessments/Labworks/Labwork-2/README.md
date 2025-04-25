@@ -59,25 +59,29 @@ mysql -h 192.168.157.137 -u root --password=""
 ```vbnet
 ERROR 2026 (HY000): TLS/SSL error: wrong version number
 ```
+
 ### 🔍 What's actually going wrong?
 By default, modern MySQL clients try to connect using SSL/TLS.
 But:
+
 - If the server is old (e.g. MySQL 5.5 or earlier), it might not support TLS properly.
 - If SSL is not configured on the server, the client handshake will fail.
 - If the client expects TLS 1.2+, and the server doesn't support it, you get a mismatch.
+
 
 **Solution:**
 
 ```bash
 mysql -h 192.168.157.137 -u root --password="" --ssl=0
 ```
+You need to tell the client not to use SSL. You already found the correct fix:
 
 ![fix command](screenshot/fix_command.png)
 
 ✅ **Resolved**: TLS version mismatch between MySQL client and server.
 
 > **Note**:  
-> MySQL versions prior to 5.7.11 do not support `--ssl-mode`. Use `--ssl=0` to disable SSL.
+> The `--ssl=0` option disables **SSL** completely, which matches what the server expects — plain unencrypted connection.
 
 ---
 
