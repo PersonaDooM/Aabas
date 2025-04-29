@@ -80,7 +80,7 @@ mysql -h 192.168.157.137 -u root --password="" --ssl=0
 ```
 You need to tell the client not to use SSL. You already found the correct fix:
 
-![fix command](screenshot/fix_command.png)
+![fix_command](screenshot/fix_command.png)
 
 ✅ **Resolved**: TLS version mismatch between MySQL client and server.
 
