@@ -40,10 +40,15 @@ You are required to research and use correct `OpenSSL` commands to:
 #### Step 1 :
 Creat a simple `key` and some `plaintext` in file.
 
+#### Key :
 ```bash
 echo "hayabusa" > key.hex
 ```
 
+#### Plaintext :
+```bash
+echo "can I borrow RM200?" > plaintext.txt
+```
 
 
 
