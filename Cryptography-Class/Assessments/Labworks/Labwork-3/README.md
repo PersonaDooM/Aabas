@@ -38,10 +38,12 @@ You are required to research and use correct `OpenSSL` commands to:
 ### Step-by-step :
 
 #### Step 1 :
-Creat a simple key in 1 file.
+Creat a simple `key` and some `plaintext` in file.
+
 ```bash
 echo "hayabusa" > key.hex
 ```
+
 
 
 
