@@ -50,6 +50,14 @@ echo "hayabusa" > key.hex
 echo "can I borrow RM200?" > plaintext.txt
 ```
 
+#### Step 2 :
+Lets encrypt the plaintext using aes-cbc.
+
+#### Commands :
+```bash
+openssl enc -aes-256-cbc -in plaintext.txt -out encrypt.enc -pass file:./key.hex
+```
+![aes_encrypt](screenshot/aes_encrypt.png)
 
 
 
