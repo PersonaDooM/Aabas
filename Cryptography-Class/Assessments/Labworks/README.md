@@ -5,3 +5,4 @@ Labwork 2 - Cryptographic Attacks: Cracking Weak Password Hashes and Exploiting 
 Labwork 3 - Hands-on Exploration of Cryptographic Tools: Hashing, Encryption, and Digital Signatures
 ---
 Labwork 4 - Implementing Cryptography with Python
+---
