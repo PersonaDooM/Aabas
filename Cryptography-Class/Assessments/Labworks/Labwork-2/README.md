@@ -49,7 +49,7 @@ The following tools were used to complete this lab:
 nmap -sV -p 3306 192.168.157.137 > nmap.txt
 
 ```
-C:\Users\aabas\OneDrive - Accord Investments\Documents\Aabas\Aabas\Cryptography-Class\Assessments\Labworks\Labwork-2\screenshot\nmap.png
+![nmap](screenshot/nmap.png)
 
 - Identified that **MySQL** was running on port **3306**.
 
