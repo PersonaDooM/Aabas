@@ -1,11 +1,5 @@
 # 🔐 Lab 3: Hands-on Exploration of Cryptographic Tools (OpenSSL)
 
-**Name:** Adli Jaafar  
-**Date:** April 20  
-**Lab Duration:** 3 Hours  
-**Total Marks:** 15  
-**Lab Type:** Hands-On + Report + Demo/Debrief
-
 ---
 
 ## 🧠 Lab Objectives
@@ -36,13 +30,21 @@ You are required to research and use correct `OpenSSL` commands to:
 
 ---
 
-## 📁 Repository Contents
+## Task 1 : Symmetric Encryption and Decryption using AES-256-CBC
 
-- `tasks/` – Contains answers and explanation for each section
-- `screenshots/` – Screenshots as proof of execution
-- `demo-notes.md` – Notes or summary for live demo or debrief
+### Tools Used :
+- Openssl
 
----
+### Step-by-step :
+
+#### Step 1 :
+Creat a simple key in 1 file.
+```bash
+echo "hayabusa" > key.hex
+```
+
+
+
 
 ## 📌 Notes
 
