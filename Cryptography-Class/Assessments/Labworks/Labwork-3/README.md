@@ -82,9 +82,78 @@ flag{AES_256_CBC}
 
 ---
 
-## Task 1 : Symmetric Encryption and Decryption using AES-256-CBC
+## Task 1 : Asymmetric Encryption and Decryption using RSA
+
+Here I am sender and Kiel as a reciever but Kiel to give he`s public key first.
+
+### Step 1 :
+Kiel need to generate pirvate and public key first then give me the public key.
+
+#### Private key :
+```bash
+openssl genpkey -algorithem RSA -out private.pem -pkeyopt rsa_keygen_bits:2048
+```
+
+![rsa_prk](screenshot/aes_ss/rsa_ss/rsa_prk.png)
+
+- `openssl genpkey`: Tells OpenSSL to generate a private key.
+- `-algorithm RSA`: Specifies to use the RSA algorithm.
+- `-out private.pem`: Saves the key into a file named `private.pem`.
+- `-pkeyopt rsa_keygen_bits:2048`: Sets the key size to 2048 bits (a standard secure length).
+
+#### Public key :
+```bash
+openssl rsa -in private.pem -pubout -out public .pem
+```
+
+![rsa_pbk](screenshot/aes_ss/rsa_ss/rsa_pbk.png)
+
+- `openssl rsa`: Uses the RSA tool.
+- `-in private.pem`: Reads your private key file.
+- `-pubout`: Tells OpenSSL to output the public key.
+- `-out public.pem`: Saves the public key into `public.pem`.
+
+---
+
+### Step 2 :
+Kiel will send the public key `public.pem` to me.
+
+### Step 3 :
+
+Now from the public key, I will encrypt a message using Kiel`s public key.
+
+#### Command :
+```bash
+openssl rsautl -encrypt -inkey public.pem -pubin -in secret.txt -out aabas.enc 
+```
+![rsa_e](screenshot/aes_ss/rsa_ss/rsa_e.jpg)
+
+- `openssl rsautl`: Use OpenSSL's RSA utility tool.
+- `-encrypt`: You're encrypting data.
+- -inkey public.pem: Use the `public key` file called public.pem.
+- `-pubin`: Tells OpenSSL that the key you're using is a public key.
+- `-in secret.txt`: The input file (the message or secret) is `secret.txt`.
+- `-out aabas.enc`: The output file, which will contain the encrypted version of the message, is named `aabas.enc`.
 
 
+Now I will send the message back to Kiel.
+
+### Step 4 :
+Kiel will decrypt the message using his private key.
+
+#### Command :
+```bash
+openssl rsautl -decrypt -inkey private.pem -in aabas.enc -out aabas.txt
+```
+![rsa_d](screenshot/aes_ss/rsa_ss/rsa_d.png)
+
+- `-decrypt` : tells openssl to decrypt.
+- `-inkey` : private key that want to use.
+
+#### Result :
+![rsa_r](screenshot/aes_ss/rsa_ss/rsa_r.png)
+
+---
 
 ## 📌 Notes
 
