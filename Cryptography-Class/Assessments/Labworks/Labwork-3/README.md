@@ -40,17 +40,20 @@ You are required to research and use correct `OpenSSL` commands to:
 ### Step-by-step :
 
 #### Step 1 :
-Creat a simple `key` and some `plaintext` in file.
-
-#### Key :
-```bash
-echo "hayabusa" > rsa_key.hex
-```
+I am a reciever and Kiel is a sender. He will create a plaintext and key then send to me the encrypted message.
 
 #### Plaintext :
 ```bash
-echo "can I borrow RM100?" > plaintext.txt
+echo "flag{AES_256_CBC}" > kiel_aes.txt
 ```
+![aes_p](screenshot/aes_ss/rsa_ss/plaintext.png)
+
+#### Cyphertext :
+```bash
+openssl enc -aes-256-cbc -salt -in kiel_aes.txt -out kiel_aes.enc -k abc123
+```
+![aes_e](screenshot/aes_ss/rsa_ss/encrypt.png)
+
 
 #### Step 2 :
 Lets encrypt the plaintext using aes-cbc.
@@ -59,7 +62,7 @@ Lets encrypt the plaintext using aes-cbc.
 ```bash
 openssl enc -aes-256-cbc -in plaintext.txt -out encrypt.enc -pass file:./rsa_key.hex
 ```
-![aes_encrypt](screenshot/aes_encrypt.png)
+
 
 
 
