@@ -75,6 +75,7 @@ openssl enc -d -aes-256-cbc -in kiel_aes.enc -out kiel_aes.txt
 
 #### Results :
 ![aes_r](screenshot/aes_ss/rsa_ss/aes_r.jpg)
+
 flag{AES_256_CBC}
 
 ## 📌 Notes
