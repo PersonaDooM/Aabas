@@ -42,12 +42,12 @@ Creat a simple `key` and some `plaintext` in file.
 
 #### Key :
 ```bash
-echo "hayabusa" > key.hex
+echo "hayabusa" > rsa_key.hex
 ```
 
 #### Plaintext :
 ```bash
-echo "can I borrow RM200?" > plaintext.txt
+echo "can I borrow RM100?" > plaintext.txt
 ```
 
 #### Step 2 :
@@ -55,7 +55,7 @@ Lets encrypt the plaintext using aes-cbc.
 
 #### Commands :
 ```bash
-openssl enc -aes-256-cbc -in plaintext.txt -out encrypt.enc -pass file:./key.hex
+openssl enc -aes-256-cbc -in plaintext.txt -out encrypt.enc -pass file:./rsa_key.hex
 ```
 ![aes_encrypt](screenshot/aes_encrypt.png)
 
