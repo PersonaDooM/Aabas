@@ -40,7 +40,7 @@ You are required to research and use correct `OpenSSL` commands to:
 ### Step-by-step :
 
 #### Step 1 :
-I am a reciever and Kiel is a sender. He will create a plaintext and key then send to me the encrypted message.
+I am a `reciever` and `Kiel` is a `sender`. He will create a plaintext and key then send to me the encrypted message.
 
 #### Plaintext :
 ```bash
@@ -54,9 +54,16 @@ openssl enc -aes-256-cbc -salt -in kiel_aes.txt -out kiel_aes.enc -k abc123
 ```
 ![aes_e](screenshot/aes_ss/rsa_ss/encrypt.png)
 
+- `openssl` - Tells OpenSSL to use its encryption function
+- `-aes-256-cbc` -Specifies the AES encryption algorithm with a 256-bit key in CBC (Cipher Block Chaining) mode.
+- `-in` - Specifies the input file to be encrypted
+- `-out` - Specifies the output file where the encrypted data will be stored
+- `-k` - Uses the password `abc123` to generate the encryption key
+
+Now Kiel will send the message and pub key to me.
 
 #### Step 2 :
-Lets encrypt the plaintext using aes-cbc.
+After I recieve the message from email, lets encrypt the plaintext using aes-cbc.
 
 #### Commands :
 ```bash
