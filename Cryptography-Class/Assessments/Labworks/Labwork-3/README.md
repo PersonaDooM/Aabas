@@ -62,6 +62,8 @@ openssl enc -aes-256-cbc -salt -in kiel_aes.txt -out kiel_aes.enc -k abc123
 
 Now Kiel will send the message and pub key to me.
 
+---
+
 #### Step 2 :
 After I recieve the message and key from email, lets dencrypt the cyphertext using `abc123` as key.
 
@@ -77,6 +79,12 @@ openssl enc -d -aes-256-cbc -in kiel_aes.enc -out kiel_aes.txt
 ![aes_r](screenshot/aes_ss/rsa_ss/aes_r.jpg)
 
 flag{AES_256_CBC}
+
+---
+
+## Task 1 : Symmetric Encryption and Decryption using AES-256-CBC
+
+
 
 ## 📌 Notes
 
