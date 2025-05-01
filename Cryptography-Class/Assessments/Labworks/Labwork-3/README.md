@@ -82,7 +82,7 @@ flag{AES_256_CBC}
 
 ---
 
-## Task 1 : Asymmetric Encryption and Decryption using RSA
+## Task 2 : Asymmetric Encryption and Decryption using RSA
 
 Here I am sender and Kiel as a reciever but Kiel to give he`s public key first.
 
@@ -118,6 +118,8 @@ openssl rsa -in private.pem -pubout -out public .pem
 ### Step 2 :
 Kiel will send the public key `public.pem` to me.
 
+---
+
 ### Step 3 :
 
 Now from the public key, I will encrypt a message using Kiel`s public key.
@@ -137,6 +139,8 @@ openssl rsautl -encrypt -inkey public.pem -pubin -in secret.txt -out aabas.enc
 
 
 Now I will send the message back to Kiel.
+
+---
 
 ### Step 4 :
 Kiel will decrypt the message using his private key.
