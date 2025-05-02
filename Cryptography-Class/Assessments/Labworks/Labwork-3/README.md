@@ -204,6 +204,41 @@ openssl dgst -sha256 hash.txt
 ```
 ![hash_new](screenshot/aes_ss/rsa_ss/hash_new.png)
 
+✅ You’ll see a completely different hash.
+
+---
+
+### 🧠 Explanation:
+
+- SHA-256 creates a unique fingerprint of the file.
+- Even small changes make a new hash (🔁 Avalanche Effect).
+- Used to verify file integrity.
+
+---
+
+## Task 4 : Digital Signatures using RSA
+
+Here Kiel will sign a file with digital signature using his private key.
+
+---
+
+#### Step 1 :
+generate digital signature using Kiel's private key.
+
+```bash
+openssl dgst -sha256 -sign private.pem -out sign_keil.bin ds_kiel.txt
+```
+![sign_create](screenshot/aes_ss/rsa_ss/sign_create.png)
+
+- openssl dgst: Use OpenSSL to perform a digest (hash) operation.
+
+- -sign private.pem: Use the private key from private.pem to sign the hash.
+
+- -out sign_keil.bin: Save the digital signature to sign_keil.bin.
+
+- ds_kiel.txt: The original file whose contents are being signed.
+
+
 
 
 ## 📌 Notes
