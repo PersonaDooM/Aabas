@@ -86,6 +86,8 @@ flag{AES_256_CBC}
 
 Here I am sender and Kiel as a reciever but Kiel to give he`s public key first.
 
+---
+
 ### Step 1 :
 Kiel need to generate pirvate and public key first then give me the public key.
 
@@ -103,7 +105,7 @@ openssl genpkey -algorithem RSA -out private.pem -pkeyopt rsa_keygen_bits:2048
 
 #### Public key :
 ```bash
-openssl rsa -in private.pem -pubout -out public .pem
+openssl rsa -in private.pem -pubout -out public.pem
 ```
 
 ![rsa_pbk](screenshot/aes_ss/rsa_ss/rsa_pbk.png)
@@ -158,6 +160,51 @@ openssl rsautl -decrypt -inkey private.pem -in aabas.enc -out aabas.txt
 ![rsa_r](screenshot/aes_ss/rsa_ss/rsa_r.png)
 
 ---
+
+## Task 3 :Hashing and Message Integrity using SHA-256
+
+For this task I'm do it personally.
+
+---
+
+### Step 1 :
+Create a plaintext and hash it.
+
+#### Command :
+```bash
+echo "Secure your password with hashing" > hash.txt
+```
+![hash_p](screenshot/aes_ss/rsa_ss/hash_p.png)
+
+### Step 2 :
+Hashing the hash usung SHA-256
+```bash
+openssl dgst -sha256 hash.txt
+```
+![hash_e](screenshot/aes_ss/rsa_ss/hash_e.png)
+
+- `openssl dgst`: Use OpenSSL to compute a digest (hash).
+
+- `-sha256`: Specify the SHA-256 algorithm.
+
+### Step 3 :
+Modify the file.
+
+#### Command :
+```bash
+echo "-" >> hash.txt
+```
+
+### Step 4 :
+Hashing the text again and compare with the previous hash
+
+#### Command :
+```bash
+openssl dgst -sha256 hash.txt
+```
+![hash_new](screenshot/aes_ss/rsa_ss/hash_new.png)
+
+
 
 ## 📌 Notes
 
