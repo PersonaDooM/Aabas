@@ -230,13 +230,13 @@ openssl dgst -sha256 -sign private.pem -out sign_keil.bin ds_kiel.txt
 ```
 ![sign_create](screenshot/aes_ss/rsa_ss/sign_create.png)
 
-- openssl dgst: Use OpenSSL to perform a digest (hash) operation.
+- `openssl dgst`: Use OpenSSL to perform a digest (hash) operation.
 
-- -sign private.pem: Use the private key from private.pem to sign the hash.
+- `-sign private.pem`: Use the private key from private.pem to sign the hash.
 
-- -out sign_keil.bin: Save the digital signature to sign_keil.bin.
+- `-out sign_keil.bin`: Save the digital signature to sign_keil.bin.
 
-- ds_kiel.txt: The original file whose contents are being signed.
+- `ds_kiel.txt`: The original file whose contents are being signed.
 
 Now Kiel will send a txt file and digital signature.
 
@@ -258,6 +258,34 @@ openssl dgst -sha256 -verify public.pem -signature sign_kiel.bin ds_kiel.txt
 ```ngix
 Verified OK
 ```
+
+---
+
+### Step 3 :
+Let's try to change the txt file and see what happen.
+
+#### Command :
+```bash
+echo "_" >> ds_kiel.txt
+```
+
+#### Result :
+```mathematica
+Verification Failure
+```
+![sign_fail](screenshot/aes_ss/rsa_ss/sign_fail.jpg)
+
+---
+
+### 🧠 Explanation:
+
+#### A digital signature is valid only if:
+
+- The file has not been modified at all after being signed.
+
+- The content used to verify must be 100% the same as during the signing process.
+
+Therefore, when you change ds_kiel.txt, the SHA-256 hash changes, and the signature no longer matches.
 
 ## 📌 Notes
 
