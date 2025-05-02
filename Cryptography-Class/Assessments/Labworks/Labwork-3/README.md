@@ -222,7 +222,7 @@ Here Kiel will sign a file with digital signature using his private key.
 
 ---
 
-#### Step 1 :
+### Step 1 :
 generate digital signature using Kiel's private key.
 
 ```bash
@@ -238,8 +238,26 @@ openssl dgst -sha256 -sign private.pem -out sign_keil.bin ds_kiel.txt
 
 - ds_kiel.txt: The original file whose contents are being signed.
 
+Now Kiel will send a txt file and digital signature.
 
+---
 
+### Step 2 :
+
+Let's verify the txt file using the digital signature.
+
+#### Command :
+```bash
+openssl dgst -sha256 -verify public.pem -signature sign_kiel.bin ds_kiel.txt
+```
+![sign_verify](screenshot/aes_ss/rsa_ss/sign_v.jpg)
+
+- `-verify` : tells openssl to verify using digital signature.
+
+#### Result :
+```ngix
+Verified OK
+```
 
 ## 📌 Notes
 
