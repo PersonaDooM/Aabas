@@ -93,7 +93,7 @@ Kiel need to generate pirvate and public key first then give me the public key.
 
 #### Private key :
 ```bash
-openssl genpkey -algorithem RSA -out private.pem -pkeyopt rsa_keygen_bits:2048
+openssl genpkey -algorithm RSA -out private.pem -pkeyopt rsa_keygen_bits:2048
 ```
 
 ![rsa_prk](screenshot/aes_ss/rsa_ss/rsa_prk.png)
