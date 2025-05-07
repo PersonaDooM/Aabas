@@ -46,13 +46,13 @@ I am a `reciever` and `Kiel` is a `sender`. He will create a plaintext and key t
 ```bash
 echo "flag{AES_256_CBC}" > kiel_aes.txt
 ```
-![aes_p](screenshot/plaintext.png)
+![aes_p](screenshot/aes_p.png)
 
 #### Cyphertext :
 ```bash
 openssl enc -aes-256-cbc -salt -in kiel_aes.txt -out kiel_aes.enc -k abc123
 ```
-![aes_e](screenshot/encrypt.png)
+![aes_e](screenshot/aes_e.png)
 
 - `openssl` - Tells OpenSSL to use its encryption function
 - `-aes-256-cbc` -Specifies the AES encryption algorithm with a 256-bit key in CBC (Cipher Block Chaining) mode.

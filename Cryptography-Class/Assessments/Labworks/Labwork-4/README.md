@@ -22,8 +22,10 @@ Here I'm using `Visual Studio Code` for my platform to run python code.
 
 #### Step 1 :
 install python from extensions
-----
-dfg
+
+#### Step 2 :
+   
+
 ---
 ## 🧩 Tasks Overview
 
