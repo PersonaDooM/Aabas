@@ -42,6 +42,9 @@ Now our `visual studio code` is ready to use.
 
 ### ✅ Task 1: Symmetric Encryption (AES)
 
+### 🔐 What is AES?
+- AES (Advanced Encryption Standard) is a way to securely encrypt and decrypt data using a secret key.
+
 Here is my python code.
 
 - [AES_encrypt](Python_Source/aes_encrypt.py) 
@@ -59,9 +62,23 @@ Now let's decrypt the ciphertext.
 
 ![aes_d](screenshot/aes_d.png)
 
+### 💡 Explanation
+
+- `Generate a key` – like a password, used to lock/unlock data.
+- `Create a cipher` – a tool that uses the key to encrypt/decrypt.
+- `Encrypt` – turns your message into scrambled text.
+- `Decrypt` – turns the scrambled text back into the original message.
+
 ---
 
 ### ✅ Task 2: Asymmetric Encryption (RSA)
+
+### 🔐 What is RSA?
+
+RSA is a method for encrypting and decrypting data using two keys:
+
+- Public key (used to encrypt)
+- Private key (used to decrypt)
 
 Here is my python code.
 
@@ -89,9 +106,20 @@ I will decrypt the `ciphertext` using my `private key` to see the plaintext.
 
 ![rsa_decrypt](screenshot/rsa_decrypt.png)
 
+### 💡 Explanation
+
+- `Generate key pair` – creates a private and public key.
+- `Encrypt with public key` – only the private key can decrypt this.
+- `Decrypt with private key` – gets the original message back.
+
 ---
 
 ### ✅ Task 3: Hashing (SHA-256)
+
+### 🔐 What is SHA-256?
+
+SHA-256 is a one-way hashing algorithm that turns data into a fixed-size string (digest). It's commonly used to verify data integrity (not for encryption/decryption).
+
 
 Here is my python code.
 
@@ -119,14 +147,41 @@ Second hash : Cryptography Lab by Muhammad Aabas [DooM]  > NWS23010046 !-
 82f4940910b19700f28ed6a578d4af037833a5d2fd6f0da198cc84dd88d68fe6
 ```
 
+### 🌪️ What is the Avalanche Effect?
+When you change even 1 character (or 1 bit) in the input, the entire hash output changes drastically — like a chain reaction.
+
+### 🔍 Why Does It Happen?
+
+Hash functions are designed so that:
+
+- Tiny changes in input produce completely different hashes
+- You can’t guess the input from the hash
+- It’s impossible to predict how the output will change
+
+This makes hash functions very secure and perfect for:
+
+- `Password storage`
+- `File integrity checking`
+- `Digital signatures`
+
 ---
 
 ### ✅ Task 4: Digital Signatures (RSA)
 
-- Message signing using private key.
-- Signature verification using public key.
-- 🔗 [View Code](task4_digital_signature/digital_signature.py)
-- 🖼️ Output: `signature_verification.png`
+### ✍️ What is a Digital Signature?
+
+A digital signature ensures:
+
+- `Integrity` – the message wasn't changed.
+- `Authenticity` – it was really sent by the owner of the private key.
+
+How it works:
+
+- The sender signs the message using their private key.
+- The receiver verifies the signature using the public key.
+
+
+
 
 ---
 
