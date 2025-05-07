@@ -25,8 +25,14 @@ install python from extensions
 
 #### Step 2 :
 Open terminal in vscode and install `pycryptodome`.
+
 ```bash
 pip install pycryptodome
+```
+
+- If error, It will give the right command then use full quotes in PowerShell. Example :
+```powershell
+& "C:/Users/aabas/AppData/Local/Programs/Python/Python312/python.exe" -m pip install pycryptodome
 ```
 
 ---
