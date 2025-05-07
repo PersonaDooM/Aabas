@@ -44,8 +44,8 @@ Now our `visual studio code` is ready to use.
 
 Here is my python code.
 
-- [AES_encrypt](Python_Source/aes_encrypt.py) python code.
-- [AES_decrypt](Python_Source/aes_dencrypt.py) python code.
+- [AES_encrypt](Python_Source/aes_encrypt.py) 
+- [AES_decrypt](Python_Source/aes_dencrypt.py)
 
 #### Encrypt the plaintext :
 
@@ -57,17 +57,14 @@ Ezekiel will encrypt a secret message using his key then give to me.
 Now let's decrypt the ciphertext.
 ![aes_d](screenshot/aes_d.png)
 
-
-
-
 ---
 
 ### ✅ Task 2: Asymmetric Encryption (RSA)
 
-- Generate RSA key pair.
-- Encrypt with public key, decrypt with private key.
-- 🔗 [View Code](task2_rsa/rsa_encryption.py)
-- 🖼️ Output: `sample_output.png`
+Here is my python code.
+
+- [RSA_decrypt](Python_Source/rsa_decrypt.py)
+- [RSA_key_generator](Python_Source/rsa_key_generator.py)
 
 ---
 
