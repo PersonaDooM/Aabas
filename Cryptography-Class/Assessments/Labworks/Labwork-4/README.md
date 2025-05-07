@@ -15,7 +15,10 @@ This lab covers:
 
 ---
 
-Here I'm using `visual studio code` for my platform to run python code.
+## 🔨 Tools
+Here I'm using `Visual Studio Code` for my platform to run python code.
+
+> How to use `VS Code`?
 
 ---
 ## 🧩 Tasks Overview
