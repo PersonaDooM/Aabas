@@ -99,7 +99,25 @@ Here is my python code.
 
 #### Hashing the message :
 
+![sha256 hash](screenshot/sha256_hash.png)
 
+#### Edit the message :
+
+Add `-` to the end of the message to see the hash output.
+
+![sha256 edit](screenshot/sha256_edit.png)
+
+#### Result :
+
+First hash : Cryptography Lab by Muhammad Aabas [DooM]  > NWS23010046 !
+```bash
+01a46a1976295b75af5c79c9217d9d5cefc35aa5d34d29a742b26d98e95fe99f
+```
+
+Second hash : Cryptography Lab by Muhammad Aabas [DooM]  > NWS23010046 !-
+```bash
+82f4940910b19700f28ed6a578d4af037833a5d2fd6f0da198cc84dd88d68fe6
+```
 
 ---
 
