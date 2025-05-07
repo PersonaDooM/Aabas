@@ -191,10 +191,17 @@ Kiel will verify the message using my `public key`*(from task 2)* with digital s
 
 
 
+### ✅ Summary
+Digital signatures are very strict:
+
+- They must match exactly in terms of message, key, padding, and hash.
+- Even tiny differences cause `verify()` to fail — by design, to detect tampering or errors.
+
 ### 💡 Explanation
 
 - `private_key.sign()` → signs the message (only the owner can do this).
 - `public_key.verify()` → checks that the message wasn't tampered with and the signature matches.
+
 
 ---
 
