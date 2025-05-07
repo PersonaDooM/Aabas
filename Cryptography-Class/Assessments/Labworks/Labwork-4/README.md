@@ -79,9 +79,13 @@ I will create a key pairs wich is `private key` **(not to share)** and `public k
 
 #### Encrypt the plaintext :
 
+Kiel will encrypt a `plaintext` to `ciphertext` using my `public key` then send back to me.
 
+![rsa_encrypt](screenshot/rsa_encrypt.png)
 
 #### Decrypt the ciphertext :
+
+I will decrypt the `ciphertext` using my `private key` to see the plaintext.
 
 ![rsa_decrypt](screenshot/rsa_decrypt.png)
 
@@ -89,10 +93,9 @@ I will create a key pairs wich is `private key` **(not to share)** and `public k
 
 ### ✅ Task 3: Hashing (SHA-256)
 
-- Generate SHA-256 hash of input strings and files.
-- Multiple inputs shown.
-- 🔗 [View Code](task3_hashing/sha256_hashing.py)
-- 🖼️ Screenshots: [hashing_screenshots](task3_hashing/hashing_screenshots/)
+Here is my python code.
+
+- [SHA-256_script](Python_Source/sha256_hash.py)
 
 ---
 
