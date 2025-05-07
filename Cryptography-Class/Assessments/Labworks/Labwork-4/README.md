@@ -189,7 +189,13 @@ I will assign a `digital signature` using my `private key`*(from task 2)* to the
 
 Kiel will verify the message using my `public key`*(from task 2)* with digital signature.
 
+![sign valid](screenshot/sign_valid.png)
 
+#### Edit message :
+
+change small thing in message to see the verify result.
+
+![sign invalid](screenshot/sign_invalid.png)
 
 ### ✅ Summary
 Digital signatures are very strict:
