@@ -22,7 +22,7 @@ def create_signature(message, private_key_b64):
 
 if __name__ == "__main__":
     message = input("Enter the message to sign: ")
-    private_key_b64 = input("Enter the RSA private key (Base64): ")
+    private_key_b64 = input("\nEnter the RSA private key (Base64): ")
 
     signature_b64 = create_signature(message, private_key_b64)
     print(f"\n✍️ Digital Signature (Base64):\n{signature_b64}")

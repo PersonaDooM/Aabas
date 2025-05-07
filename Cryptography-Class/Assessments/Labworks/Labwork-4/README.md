@@ -179,6 +179,17 @@ How it works:
 - The sender signs the message using their private key.
 - The receiver verifies the signature using the public key.
 
+#### Generate and sign message with private key :
+
+I will assign a `digital signature` using my `private key`*(from task 2)* to the message and send both to the Kiel, Kiel will `verify` the message with `digital signature`.
+
+![sign create](screenshot/sign_create.png)
+
+#### Verify the message :
+
+Kiel will verify the message using my `public key`*(from task 2)* with digital signature.
+
+
 
 ### 💡 Explanation
 
@@ -187,3 +198,6 @@ How it works:
 
 ---
 
+```bash
+If you have question, you can contact me
+```
