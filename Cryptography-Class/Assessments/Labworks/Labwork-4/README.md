@@ -44,11 +44,10 @@ Now our `visual studio code` is ready to use.
 
 - Here is my [AES_python](aes_encrypt.py) code.
 
+#### Run python code :
+After run the code, we can choose whether we want to encrypt/decrypt a message.
 
-- AES encryption and decryption of a sample message.
-- Python implementation using `pycryptodome`.
-- 🔗 [View Code](task1_aes/aes_encryption.py)
-- 🖼️ Output: `sample_output.png`
+![aes_run](screenshot/aes_run.png)
 
 ---
 
