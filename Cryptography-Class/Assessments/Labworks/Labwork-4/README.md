@@ -50,6 +50,9 @@ Here is my python code.
 
 ![aes_e](screenshot/aes_e.png)
 
+
+![aes_d](screenshot/aes_d.png)
+
 #### Encrypt the plaintext :
 
 
