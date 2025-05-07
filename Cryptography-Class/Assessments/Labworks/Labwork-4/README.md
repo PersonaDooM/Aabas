@@ -31,6 +31,8 @@ install python from extensions
 
 ### ✅ Task 1: Symmetric Encryption (AES)
 
+[aes_code](aes_encrypt.py)
+
 - AES encryption and decryption of a sample message.
 - Python implementation using `pycryptodome`.
 - 🔗 [View Code](task1_aes/aes_encryption.py)
