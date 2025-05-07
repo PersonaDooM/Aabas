@@ -44,8 +44,8 @@ Now our `visual studio code` is ready to use.
 
 Here is my python code.
 
-- 
-- [AES_decrypt](aes_dencrypt.py) python code.
+- [AES_encrypt](Python_Source/aes_encrypt.py) python code.
+- [AES_decrypt](Python_Source/aes_dencrypt.py) python code.
 
 #### Encrypt the plaintext :
 
