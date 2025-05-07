@@ -181,7 +181,10 @@ How it works:
 - The receiver verifies the signature using the public key.
 
 
+### 💡 Explanation
 
+- `private_key.sign()` → signs the message (only the owner can do this).
+- `public_key.verify()` → checks that the message wasn't tampered with and the signature matches.
 
 ---
 
