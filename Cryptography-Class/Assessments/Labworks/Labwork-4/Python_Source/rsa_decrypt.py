@@ -27,7 +27,7 @@ def decrypt_rsa(ciphertext_b64, private_key_b64):
 if __name__ == "__main__":
     # Input: ciphertext and private key in Base64 format
     ciphertext_b64 = input("Enter the Base64 ciphertext: ")
-    private_key_b64 = input("Enter the Base64 private key: ")
+    private_key_b64 = input("\nEnter the Base64 private key: ")
     
     # Decrypt and print the result
     decrypted_message = decrypt_rsa(ciphertext_b64, private_key_b64)

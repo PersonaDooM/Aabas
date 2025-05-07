@@ -50,11 +50,13 @@ Here is my python code.
 #### Encrypt the plaintext :
 
 Ezekiel will encrypt a secret message using his key then give to me.
+
 ![aes_e](screenshot/aes_e.png)
 
 #### Decrypt the ciphertext :
 
 Now let's decrypt the ciphertext.
+
 ![aes_d](screenshot/aes_d.png)
 
 ---
@@ -63,8 +65,25 @@ Now let's decrypt the ciphertext.
 
 Here is my python code.
 
+- 
 - [RSA_decrypt](Python_Source/rsa_decrypt.py)
 - [RSA_key_generator](Python_Source/rsa_key_generator.py)
+
+
+#### generate key pairs :
+
+I will create a key pairs wich is `private key` **(not to share)** and `public key` **(share to Kiel)**.
+
+![rsa_key_generator](screenshot/rsa_key_generator.png)
+
+
+#### Encrypt the plaintext :
+
+
+
+#### Decrypt the ciphertext :
+
+![rsa_decrypt](screenshot/rsa_decrypt.png)
 
 ---
 
