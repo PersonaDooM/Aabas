@@ -65,7 +65,6 @@ Now let's decrypt the ciphertext.
 ### 💡 Explanation
 
 - `Generate a key` – like a password, used to lock/unlock data.
-- `Create a cipher` – a tool that uses the key to encrypt/decrypt.
 - `Encrypt` – turns your message into scrambled text.
 - `Decrypt` – turns the scrambled text back into the original message.
 
