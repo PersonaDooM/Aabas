@@ -199,5 +199,5 @@ Kiel will verify the message using my `public key`*(from task 2)* with digital s
 ---
 
 ```bash
-If you have question, you can contact me
+If you have question, you can contact me 😉
 ```
