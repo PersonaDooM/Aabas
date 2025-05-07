@@ -1,6 +1,6 @@
 # 🔐 Lab 4: Implementing Cryptography with Python
 
-**Name**: Muhammad Aabas Bin Md Suji  
+**Name** : Muhammad Aabas Bin Md Suji     **My partner** : Ezekiel
 
 ---
 
@@ -46,8 +46,12 @@ Now our `visual studio code` is ready to use.
 
 #### Run python code :
 After run the code, we can choose whether we want to encrypt/decrypt a message.
-
 ![aes_run](screenshot/aes_run.png)
+
+#### Encrypt the plaintext :
+Choose `E` to encrypt the message then drop our plaintext.
+
+
 
 ---
 
