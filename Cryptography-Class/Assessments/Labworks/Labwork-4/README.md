@@ -35,6 +35,8 @@ pip install pycryptodome
 & "C:/Users/aabas/AppData/Local/Programs/Python/Python312/python.exe" -m pip install pycryptodome
 ```
 
+Now our `visual studio code` is ready to use.
+
 ---
 ## 🧩 Tasks Overview
 
