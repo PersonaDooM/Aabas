@@ -15,6 +15,9 @@ This lab covers:
 
 ---
 
+Here I'm using `visual studio code` for my platform to run python code.
+
+---
 ## 🧩 Tasks Overview
 
 ### ✅ Task 1: Symmetric Encryption (AES)
@@ -53,9 +56,3 @@ This lab covers:
 
 ---
 
-## 📦 Dependencies
-
-Install required libraries:
-
-```bash
-pip install pycryptodome cryptography
