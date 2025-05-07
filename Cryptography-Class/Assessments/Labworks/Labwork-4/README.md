@@ -65,7 +65,7 @@ Now let's decrypt the ciphertext.
 
 Here is my python code.
 
-- 
+- [RSA_encrypt](Python_Source/rsa_encrypt.py)
 - [RSA_decrypt](Python_Source/rsa_decrypt.py)
 - [RSA_key_generator](Python_Source/rsa_key_generator.py)
 
@@ -96,6 +96,10 @@ I will decrypt the `ciphertext` using my `private key` to see the plaintext.
 Here is my python code.
 
 - [SHA-256_script](Python_Source/sha256_hash.py)
+
+#### Hashing the message :
+
+
 
 ---
 
