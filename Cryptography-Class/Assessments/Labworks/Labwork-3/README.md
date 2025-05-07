@@ -46,13 +46,13 @@ I am a `reciever` and `Kiel` is a `sender`. He will create a plaintext and key t
 ```bash
 echo "flag{AES_256_CBC}" > kiel_aes.txt
 ```
-![aes_p](screenshot/aes_ss/rsa_ss/plaintext.png)
+![aes_p](screenshot/plaintext.png)
 
 #### Cyphertext :
 ```bash
 openssl enc -aes-256-cbc -salt -in kiel_aes.txt -out kiel_aes.enc -k abc123
 ```
-![aes_e](screenshot/aes_ss/rsa_ss/encrypt.png)
+![aes_e](screenshot/encrypt.png)
 
 - `openssl` - Tells OpenSSL to use its encryption function
 - `-aes-256-cbc` -Specifies the AES encryption algorithm with a 256-bit key in CBC (Cipher Block Chaining) mode.
@@ -71,12 +71,12 @@ After I recieve the message and key from email, lets dencrypt the cyphertext usi
 ```bash
 openssl enc -d -aes-256-cbc -in kiel_aes.enc -out kiel_aes.txt 
 ```
-![aes_d](screenshot/aes_ss/rsa_ss/aes_d.jpg)
+![aes_d](screenshot/aes_d.jpg)
 
 - `-d` - tells openssl to decrypt the cyphertext
 
 #### Results :
-![aes_r](screenshot/aes_ss/rsa_ss/aes_r.jpg)
+![aes_d](screenshot/aes_r.jpg)
 
 flag{AES_256_CBC}
 
@@ -96,7 +96,7 @@ Kiel need to generate pirvate and public key first then give me the public key.
 openssl genpkey -algorithm RSA -out private.pem -pkeyopt rsa_keygen_bits:2048
 ```
 
-![rsa_prk](screenshot/aes_ss/rsa_ss/rsa_prk.png)
+![rsa_prk](screenshot/rsa_prk.png)
 
 - `openssl genpkey`: Tells OpenSSL to generate a private key.
 - `-algorithm RSA`: Specifies to use the RSA algorithm.
@@ -108,7 +108,7 @@ openssl genpkey -algorithm RSA -out private.pem -pkeyopt rsa_keygen_bits:2048
 openssl rsa -in private.pem -pubout -out public.pem
 ```
 
-![rsa_pbk](screenshot/aes_ss/rsa_ss/rsa_pbk.png)
+![rsa_pbk](screenshot/rsa_pbk.png)
 
 - `openssl rsa`: Uses the RSA tool.
 - `-in private.pem`: Reads your private key file.
@@ -130,7 +130,7 @@ Now from the public key, I will encrypt a message using Kiel`s public key.
 ```bash
 openssl rsautl -encrypt -inkey public.pem -pubin -in secret.txt -out aabas.enc 
 ```
-![rsa_e](screenshot/aes_ss/rsa_ss/rsa_e.jpg)
+![rsa_e](screenshot/rsa_e.jpg)
 
 - `openssl rsautl`: Use OpenSSL's RSA utility tool.
 - `-encrypt`: You're encrypting data.
@@ -151,13 +151,13 @@ Kiel will decrypt the message using his private key.
 ```bash
 openssl rsautl -decrypt -inkey private.pem -in aabas.enc -out aabas.txt
 ```
-![rsa_d](screenshot/aes_ss/rsa_ss/rsa_d.png)
+Aabas/Cryptography-Class/Assessments/Labworks/Labwork-3/screenshot/rsa_d.pngrsa_d
 
 - `-decrypt` : tells openssl to decrypt.
 - `-inkey` : private key that want to use.
 
 #### Result :
-![rsa_r](screenshot/aes_ss/rsa_ss/rsa_r.png)
+![rsa_r](screenshot/rsa_r.png)
 
 ---
 
@@ -174,14 +174,14 @@ Create a plaintext and hash it.
 ```bash
 echo "Secure your password with hashing" > hash.txt
 ```
-![hash_p](screenshot/aes_ss/rsa_ss/hash_p.png)
+![hash_p](screenshot/hash_p.png)
 
 ### Step 2 :
 Hashing the hash usung SHA-256
 ```bash
 openssl dgst -sha256 hash.txt
 ```
-![hash_e](screenshot/aes_ss/rsa_ss/hash_e.png)
+![hash_e](screenshot/hash_e.png)
 
 - `openssl dgst`: Use OpenSSL to compute a digest (hash).
 
@@ -202,7 +202,7 @@ Hashing the text again and compare with the previous hash
 ```bash
 openssl dgst -sha256 hash.txt
 ```
-![hash_new](screenshot/aes_ss/rsa_ss/hash_new.png)
+![hash_new](screenshot/hash_new.png)
 
 ✅ You’ll see a completely different hash.
 
@@ -228,7 +228,7 @@ generate digital signature using Kiel's private key.
 ```bash
 openssl dgst -sha256 -sign private.pem -out sign_keil.bin ds_kiel.txt
 ```
-![sign_create](screenshot/aes_ss/rsa_ss/sign_create.png)
+![sign_create](screenshot/sign_create.png)
 
 - `openssl dgst`: Use OpenSSL to perform a digest (hash) operation.
 
@@ -250,7 +250,7 @@ Let's verify the txt file using the digital signature.
 ```bash
 openssl dgst -sha256 -verify public.pem -signature sign_kiel.bin ds_kiel.txt
 ```
-![sign_verify](screenshot/aes_ss/rsa_ss/sign_v.jpg)
+![sign_v](screenshot/sign_v.jpg)
 
 - `-verify` : tells openssl to verify using digital signature.
 
@@ -273,7 +273,7 @@ echo "_" >> ds_kiel.txt
 ```mathematica
 Verification Failure
 ```
-![sign_fail](screenshot/aes_ss/rsa_ss/sign_fail.jpg)
+![ sign_fail](screenshot/sign_fail.jpg)
 
 ---
 
