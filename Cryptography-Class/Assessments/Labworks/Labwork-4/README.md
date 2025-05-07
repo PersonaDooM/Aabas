@@ -42,14 +42,13 @@ Now our `visual studio code` is ready to use.
 
 ### ✅ Task 1: Symmetric Encryption (AES)
 
-- Here is my [AES_python](aes_encrypt.py) code.
+Here is my python code.
 
-#### Run python code :
-After run the code, we can choose whether we want to encrypt/decrypt a message.
-![aes_run](screenshot/aes_run.png)
+- 
+- [AES_decrypt](aes_dencrypt.py) python code.
 
 #### Encrypt the plaintext :
-Choose `E` to encrypt the message then drop our plaintext.
+
 
 
 
