@@ -24,14 +24,18 @@ Here I'm using `Visual Studio Code` for my platform to run python code.
 install python from extensions
 
 #### Step 2 :
-   
+Open terminal in vscode and install `pycryptodome`.
+```bash
+pip install pycryptodome
+```
 
 ---
 ## 🧩 Tasks Overview
 
 ### ✅ Task 1: Symmetric Encryption (AES)
 
-Here is my [AES_python](aes_encrypt.py) code.
+- Here is my [AES_python](aes_encrypt.py) code.
+
 
 - AES encryption and decryption of a sample message.
 - Python implementation using `pycryptodome`.
