@@ -165,53 +165,73 @@ This makes hash functions very secure and perfect for:
 
 ---
 
-### ✅ Task 4: Digital Signatures (RSA)
+# 🔐 Task 4: Digital Signatures (RSA)
 
-### ✍️ What is a Digital Signature?
+## ✍️ What is a Digital Signature?
 
-A digital signature ensures:
+A digital signature guarantees:
 
-- `Integrity` – the message wasn't changed.
-- `Authenticity` – it was really sent by the owner of the private key.
+- ✅ **Integrity** – The message was not altered.
+- ✅ **Authenticity** – The message truly came from the private key owner.
 
-How it works:
+### 🧠 How It Works:
 
-- The sender signs the message using their private key.
-- The receiver verifies the signature using the public key.
+1. The sender **signs** the message using their `private key`.
+2. The receiver **verifies** the signature using the sender's `public key`.
 
-Here is my python code.
+---
 
-- [digital_signature_generator](Python_Source/sign_generator.py)
-- [signature_verifier](Python_Source/sign_verify.py)
+## 🛠️ Python Code
 
-#### Generate and sign message with private key :
+- 📄 [`sign_generator.py`](Python_Source/sign_generator.py) – generates the digital signature  
+- 📄 [`sign_verify.py`](Python_Source/sign_verify.py) – verifies the digital signature
 
-I will assign a `digital signature` using my `private key`*(from task 2)* to the message and send both to the Kiel, Kiel will `verify` the message with `digital signature`.
+---
 
+## ✉️ Steps
+
+### 1️⃣ Generate & Sign Message
+
+Use your `private key` (from **Task 2**) to sign a message and send both the message and the signature to **Kiel**.
+
+📸 Screenshot:  
 ![sign create](screenshot/sign_create.png)
 
-#### Verify the message :
+---
 
-Kiel will verify the message using my `public key`*(from task 2)* with digital signature.
+### 2️⃣ Verify the Message
 
+**Kiel** uses your `public key` to verify that the message and signature are valid and unchanged.
+
+📸 Screenshot:  
 ![sign valid](screenshot/sign_valid.png)
 
-#### Edit message :
+---
 
-change small thing in message to see the verify result.
+### 3️⃣ Modify the Message
 
+If even a small change is made to the message, verification will fail — demonstrating tamper detection.
+
+📸 Screenshot:  
 ![sign invalid](screenshot/sign_invalid.png)
 
-### ✅ Summary
-Digital signatures are very strict:
+---
 
-- They must match exactly in terms of message, key, padding, and hash.
-- Even tiny differences cause `verify()` to fail — by design, to detect tampering or errors.
+## ✅ Summary
 
-### 💡 Explanation
+🔒 Digital signatures are strict by design:
 
-- `private_key.sign()` → signs the message (only the owner can do this).
-- `public_key.verify()` → checks that the message wasn't tampered with and the signature matches.
+- The message, key, padding, and hash **must match exactly**.
+- Even the slightest change causes `.verify()` to fail.
+- This behavior ensures strong protection against tampering or corruption.
+
+---
+
+## 💡 Function Breakdown
+
+- 🔐 `private_key.sign()` → Signs the message (only the private key holder can do this).
+- 🔓 `public_key.verify()` → Confirms the message hasn't been altered and matches the original signature.
+
 
 
 ---
