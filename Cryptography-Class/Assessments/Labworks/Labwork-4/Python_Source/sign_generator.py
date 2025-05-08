@@ -10,8 +10,7 @@ def create_signature(message, private_key_b64):
         private_key = RSA.import_key(private_key_bytes)
 
         # Hash the message
-        has
-        h = SHA256.new(message.encode('utf-8'))
+        hash = SHA256.new(message.encode('utf-8'))
 
         # Create signature using PKCS#1 v1.5
         signature = pkcs1_15.new(private_key).sign(hash)

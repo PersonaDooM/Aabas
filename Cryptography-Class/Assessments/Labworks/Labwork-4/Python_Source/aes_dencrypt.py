@@ -25,6 +25,7 @@ def decrypt(encrypted_b64, password):
 
         plaintext = unpad(padded_plaintext).decode('utf-8')
         return plaintext
+        
     except Exception as e:
         return f"❌ Decryption failed: {e}"
 
