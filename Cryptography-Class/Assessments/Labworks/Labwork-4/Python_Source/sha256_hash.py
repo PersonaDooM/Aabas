@@ -10,6 +10,7 @@ def sha256_hash(text):
     
     # Get the hexadecimal digest of the hash
     hash_hex = hash_object.hexdigest()
+    
     return hash_hex
 
 if __name__ == "__main__":

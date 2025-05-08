@@ -19,8 +19,10 @@ def decrypt(encrypted_b64, password):
         encrypted = base64.b64decode(encrypted_b64)
         iv = encrypted[:16]
         ciphertext = encrypted[16:]
+
         cipher = AES.new(key, AES.MODE_CBC, iv)
         padded_plaintext = cipher.decrypt(ciphertext)
+
         plaintext = unpad(padded_plaintext).decode('utf-8')
         return plaintext
     except Exception as e:
