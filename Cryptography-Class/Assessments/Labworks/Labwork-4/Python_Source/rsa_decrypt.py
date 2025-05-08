@@ -12,10 +12,10 @@ def decrypt_rsa(ciphertext_b64, private_key_b64):
         private_key = RSA.import_key(private_key_bytes)
         
         # Create the cipher object using the private key and OAEP scheme
-        cipher = PKCS1_OAEP.new(private_key)
+        automate = PKCS1_OAEP.new(private_key)
         
         # Decrypt the ciphertext
-        plaintext_bytes = cipher.decrypt(ciphertext_bytes)
+        plaintext_bytes = automate.decrypt(ciphertext_bytes)
         
         # Decode the plaintext bytes to string
         plaintext = plaintext_bytes.decode('utf-8')

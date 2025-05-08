@@ -22,9 +22,9 @@ def encrypt(plaintext, password):
     try:
         key = get_key(password)
         iv = get_random_bytes(16)
-        cipher = AES.new(key, AES.MODE_CBC, iv)
+        automate = AES.new(key, AES.MODE_CBC, iv)
         padded_plaintext = pad(plaintext.encode('utf-8'))
-        ciphertext = cipher.encrypt(padded_plaintext)
+        ciphertext = automate.encrypt(padded_plaintext)
         encrypted = base64.b64encode(iv + ciphertext).decode('utf-8')
         return encrypted
     except Exception as e:

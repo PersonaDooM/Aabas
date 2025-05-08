@@ -8,10 +8,10 @@ def encrypt_with_public_key(public_key_b64, plaintext):
     public_key = RSA.import_key(public_key_der)
     
     # Create cipher with OAEP padding
-    cipher = PKCS1_OAEP.new(public_key)
+    automate = PKCS1_OAEP.new(public_key)
     
     # Encrypt the plaintext
-    encrypted_data = cipher.encrypt(plaintext.encode('utf-8'))
+    encrypted_data = automate.encrypt(plaintext.encode('utf-8'))
     
     # Return Base64-encoded ciphertext
     return base64.b64encode(encrypted_data).decode('utf-8')

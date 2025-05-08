@@ -20,8 +20,8 @@ def decrypt(encrypted_b64, password):
         iv = encrypted[:16]
         ciphertext = encrypted[16:]
 
-        cipher = AES.new(key, AES.MODE_CBC, iv)
-        padded_plaintext = cipher.decrypt(ciphertext)
+        automate = AES.new(key, AES.MODE_CBC, iv)
+        padded_plaintext = automate.decrypt(ciphertext)
 
         plaintext = unpad(padded_plaintext).decode('utf-8')
         return plaintext
