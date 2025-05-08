@@ -40,108 +40,163 @@ Now our `visual studio code` is ready to use.
 ---
 ## 🧩 Tasks Overview
 
-### ✅ Task 1: Symmetric Encryption (AES)
+# ✅ Task 1: Symmetric Encryption (AES)
 
-### 🔐 What is AES?
-- AES (Advanced Encryption Standard) is a way to securely encrypt and decrypt data using a secret key.
+## 🔐 What is AES?
 
-Here is my python code.
+**AES (Advanced Encryption Standard)** is a symmetric encryption algorithm that securely encrypts and decrypts data using a **shared secret key**.
 
-- [AES_encrypt](Python_Source/aes_encrypt.py) 
-- [AES_decrypt](Python_Source/aes_dencrypt.py)
+- The **same key** is used for both encryption and decryption.
+- It’s widely used for securing files, communications, and data at rest.
 
-#### Encrypt the plaintext :
+---
 
-Ezekiel will encrypt a secret message using his key then give to me.
+## 🛠️ Python Code
 
+- 📄 [`aes_encrypt.py`](Python_Source/aes_encrypt.py) – encrypts plaintext using AES  
+- 📄 [`aes_dencrypt.py`](Python_Source/aes_dencrypt.py) – decrypts AES ciphertext back to plaintext  
+
+---
+
+## 🔐 Encrypt the Plaintext
+
+**Ezekiel** encrypts a secret message using his own key and sends you the ciphertext.
+
+📸 Screenshot:  
 ![aes_e](screenshot/aes_e.png)
 
-#### Decrypt the ciphertext :
+---
 
-Now let's decrypt the ciphertext.
+## 🔓 Decrypt the Ciphertext
 
+You receive the encrypted message and use the same key to decrypt it and reveal the original message.
+
+📸 Screenshot:  
 ![aes_d](screenshot/aes_d.png)
 
-### 💡 Explanation
+---
 
-- `Generate a key` – like a password, used to lock/unlock data.
-- `Encrypt` – turns your message into scrambled text.
-- `Decrypt` – turns the scrambled text back into the original message.
+## 💡 Explanation
+
+- 🔑 `Generate a key` – A shared secret (like a password) to secure the data.
+- 🔐 `Encrypt` – Converts your plaintext into unreadable ciphertext.
+- 🔓 `Decrypt` – Converts the ciphertext back into the original readable message.
 
 ---
 
-### ✅ Task 2: Asymmetric Encryption (RSA)
+AES is fast, efficient, and ideal for when both sender and receiver can **securely share the same key**.
 
-### 🔐 What is RSA?
+---
 
-RSA is a method for encrypting and decrypting data using two keys:
+# ✅ Task 2: Asymmetric Encryption (RSA)
 
-- Public key (used to encrypt)
-- Private key (used to decrypt)
+## 🔐 What is RSA?
 
-Here is my python code.
+**RSA** is an asymmetric encryption method that uses a pair of keys:
 
-- [RSA_encrypt](Python_Source/rsa_encrypt.py)
-- [RSA_decrypt](Python_Source/rsa_decrypt.py)
-- [RSA_key_generator](Python_Source/rsa_key_generator.py)
+- 🔓 **Public key** – used to **encrypt** data  
+- 🔐 **Private key** – used to **decrypt** data
 
+This ensures that only the intended recipient (who holds the private key) can read the message.
 
-#### generate key pairs :
+---
 
-I will create a key pairs wich is `private key` **(not to share)** and `public key` **(share to Kiel)**.
+## 🛠️ Python Code
 
+- 📄 [`rsa_key_generator.py`](Python_Source/rsa_key_generator.py) – generates RSA key pairs  
+- 📄 [`rsa_encrypt.py`](Python_Source/rsa_encrypt.py) – encrypts plaintext using the public key  
+- 📄 [`rsa_decrypt.py`](Python_Source/rsa_decrypt.py) – decrypts ciphertext using the private key  
+
+---
+
+## 🔑 Generate Key Pairs
+
+Create an RSA key pair:
+
+- **Private Key** → keep secret  
+- **Public Key** → share with others (e.g. Kiel)
+
+📸 Screenshot:  
 ![rsa_key_generator](screenshot/rsa_key_generator.png)
 
+---
 
-#### Encrypt the plaintext :
+## 🔐 Encrypt the Plaintext
 
-Kiel will encrypt a `plaintext` to `ciphertext` using my `public key` then send back to me.
+**Kiel** uses your **public key** to encrypt a message into ciphertext and sends it back to you.
 
+📸 Screenshot:  
 ![rsa_encrypt](screenshot/rsa_encrypt.png)
-
-#### Decrypt the ciphertext :
-
-I will decrypt the `ciphertext` using my `private key` to see the plaintext.
-
-![rsa_decrypt](screenshot/rsa_decrypt.png)
-
-### 💡 Explanation
-
-- `Generate key pair` – creates a private and public key.
-- `Encrypt with public key` – only the private key can decrypt this.
-- `Decrypt with private key` – gets the original message back.
 
 ---
 
-### ✅ Task 3: Hashing (SHA-256)
+## 🔓 Decrypt the Ciphertext
 
-### 🔐 What is SHA-256?
+You use your **private key** to decrypt the ciphertext back to the original plaintext.
 
-SHA-256 is a one-way hashing algorithm that turns data into a fixed-size string (digest). It's commonly used to verify data integrity (not for encryption/decryption).
+📸 Screenshot:  
+![rsa_decrypt](screenshot/rsa_decrypt.png)
 
+---
 
-Here is my python code.
+## 💡 Explanation
 
-- [SHA-256_script](Python_Source/sha256_hash.py)
+- 🔑 `Generate key pair` → Produces a secure private/public key pair  
+- 📥 `Encrypt with public key` → Only the private key can decrypt the result  
+- 📤 `Decrypt with private key` → Recovers the original message  
 
-#### Hashing the message :
+---
+
+RSA ensures that **only the intended receiver** can read a message, and it's a foundational concept in secure communications.
+
+---
+
+# ✅ Task 3: Hashing (SHA-256)
+
+## 🔐 What is SHA-256?
+
+**SHA-256** is a cryptographic hash function that transforms input data into a fixed-size string (called a *digest*).  
+It is a **one-way function**, meaning the original message cannot be retrieved from the hash.  
+It's used for **verifying data integrity**, not for encryption or decryption.
+
+---
+
+## 🛠️ Python Code
+
+- 📄 [`sha256_hash.py`](Python_Source/sha256_hash.py) – generates SHA-256 hashes from text input
+
+---
+
+## 🧪 Hashing a Message
+
+📸 Screenshot:  
+Hashing the original message:
 
 ![sha256 hash](screenshot/sha256_hash.png)
 
-#### Edit the message :
+---
 
-Add `-` to the end of the message to see the hash output.
+## ✏️ Modifying the Message
 
+Even a small change (adding a `-` at the end) completely changes the hash output.
+
+📸 Screenshot:  
 ![sha256 edit](screenshot/sha256_edit.png)
 
-#### Result :
+---
 
-First hash : Cryptography Lab by Muhammad Aabas [DooM]  > NWS23010046 !
+## 🧾 Hash Results
+
+### ✅ Original Message:
+> `Cryptography Lab by Muhammad Aabas [DooM]  > NWS23010046 !`
+
 ```bash
 01a46a1976295b75af5c79c9217d9d5cefc35aa5d34d29a742b26d98e95fe99f
 ```
 
-Second hash : Cryptography Lab by Muhammad Aabas [DooM]  > NWS23010046 !-
+### ❌ Modified Message:
+> `Cryptography Lab by Muhammad Aabas [DooM]  > NWS23010046 !-`
+
 ```bash
 82f4940910b19700f28ed6a578d4af037833a5d2fd6f0da198cc84dd88d68fe6
 ```
