@@ -198,3 +198,109 @@ Now copy the request and over write the previous request in the proxy then click
 
 **Welcome to the password protected area admin*
 
+---
+
+## 3. Sniffing Network Traffic🍖
+
+### 3.1 Start Wireshark
+ 
+ Open wireshark then choose `eth0` to capture real-time traffic.
+
+![ !\[alt text\](image.png)](screenshot/wireshark.png)
+
+---
+
+### 3.2 Capture FTP
+
+Login Metasploitable2 via ftp from kali with the discovered username and password.
+
+```bash
+ftp 192.168.157.137
+```
+
+![!\[alt text\](image.png)](screenshot/login_ftp.png)
+
+Open wireshark open follow tcp stream on `ftp` packet.
+
+![!\[alt text\](image.png)](screenshot/capture_ftp.png)
+
+---
+
+### 3.3 Capture TELNET
+
+Login Metasploitable2 via TELNET from kali with the discovered username and password.
+
+```bash
+telnet 192.168.157.137
+```
+
+![!\[alt text\](image.png)](screenshot/login_telnet.png)
+
+Open wireshark open follow tcp stream on `telnet` packet.
+
+![!\[alt text\](image.png)](screenshot/capture_telnet.png)
+
+---
+
+### 3.4 Capture SSH
+
+Login Metasploitable2 via SSH from kali with the discovered username and password.
+
+error:
+
+```bash
+ssh msfadmin@192.168.157.137
+```
+
+correct:
+
+```bash
+ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa msfadmin@192.168.157.137
+```
+
+- `-oHostKeyAlgorithms=+ssh-rsa` -  Allows the client to accept a server's `ssh-rsa` host key.
+- `-oPubkeyAcceptedKeyTypes=+ssh-rsa` - Tells the client to accept `ssh-rsa` public keys from the server for authentication.
+
+#### 💡 Why the Issue Happens
+- The server is outdated (like Metasploitable2), and only supports legacy cryptographic algorithms.
+- Your client is secure and modern, refusing to use old, broken standards unless you explicitly permit them.
+
+![!\[alt text\](image.png)](screenshot/login_ssh.png)
+
+Open wireshark open follow tcp stream on `ssh` packet.
+
+![!\[alt text\](image.png)](screenshot/capture_ssh.png)
+
+---
+
+## 4. Problems Encountered🍕
+
+| Protocol | Problem | Solution |
+|----------|---------|----------|
+| FTP      | None    | N/A      |
+| Telnet   | Service was off initially | Enabled Telnet on Metasploitable2 |
+| SSH      | Hydra connection failed due to key mismatch or outdated program | Use Hydra |
+
+---
+
+## 5. Mitigation Strategies🍥
+
+| Protocol | Vulnerability | Secure Alternative | Why it’s better |
+|----------|---------------|--------------------|-----------------|
+| FTP      | Sends credentials in plaintext | SFTP / FTPS | Encrypts file transfer data and credentials |
+| Telnet   | Transmits all in plaintext | SSH | SSH encrypts communication |
+| SSH      | Still brute-forceable | Use key-based login, strong passwords | Prevents brute force access |
+| HTTP     | Data sent in Plaintext | HTTPS | Data is encrypted |
+
+---
+
+## ✅ Summary
+
+- FTP and Telnet are insecure protocols that transmit credentials in plaintext.
+- Hydra can easily brute-force weak credentials.
+- SSH is secure but can still be targeted using brute-force unless hardened.
+- Use tools like Wireshark to confirm data security over the network.
+- Always replace insecure services with encrypted alternatives like SSH or FTPS.
+- Apply proper access control, firewalls, and monitoring to reduce attack surfaces.
+
+---
