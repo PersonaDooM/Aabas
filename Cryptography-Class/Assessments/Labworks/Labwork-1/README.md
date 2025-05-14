@@ -173,9 +173,11 @@ Here, highlight the username and password that we put and click add. After that 
 In payload session, put wordlist for password and username.
 
 Username :
+
 ![!\[alt text\](image.png)](screenshot/username_payload.png)
 
 Password :
+
 ![!\[alt text\](image.png)](screenshot/password_payload.png)
 
 After that click `Start Attack`.
