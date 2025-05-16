@@ -195,9 +195,11 @@ Objective: Crack provided hashes.
 
 ---
 
-### Hash 1 :
+### Challenge 1 :
 
-Im using CyberChef & Decode here.
+- `SnZlcmV4IEF2IEpmcmNyZSBFeiBCcnJl`
+
+Im using `CyberChef` & `Decode` here.
 
 1. Identify the hash
 
@@ -216,3 +218,58 @@ Im using CyberChef & Decode here.
 
 ---
 
+### Challenge 2 :
+
+- `7b77ca1e2b3e7228a82ecbc7ca0e6b52`
+
+Im using `hashcat` & `decode` for this challenge.
+
+1. Identify the hash.
+
+![-](screenshot/Task_5/2_identify.png)
+
+2.  Save the hash then crack with `hashcat`.
+
+```bash
+hashcat -m 0 -a 0 -o cracked2.txt 2hash.txt wordlist.txt
+```
+
+- `-m 0` – Hash type 0 = MD5.
+- `-a 0` – Attack mode 0 = dictionary attack (tries passwords from a wordlist).
+
+---
+
+### Result
+
+![!\[alt text\](image.png)](screenshot/Task_5/2_flag.png)
+
+---
+
+### Challenge 3 :
+
+- `e583cee9ab9d7626c970fd6e9938fcb2d06fbbd12f1c1a3c6902a215808c825c`
+
+For this challenge I also use `hashcat` & `decode`.
+
+1. Identify the hash.
+
+![alt text](screenshot/Task_5/3_identify.png)
+
+
+2.  Save the hash then crack with `hashcat`.
+
+```bash
+hashcat --show -m 1400 -a 0 -o cracked3.txt 3hash.txt wordlist.txt
+```
+
+- `--show` - to display already cracked hashes from the potfile.
+- -`m 1400` – Specifies the hash type. 1400 = SHA-256.
+- `-a 0 – Attack mode. 0` = dictionary attack (tries passwords from a wordlist).
+
+---
+
+### Result
+
+![-](screenshot/Task_5/3.flag.png)
+
+---
