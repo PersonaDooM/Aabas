@@ -231,9 +231,10 @@ Im using `hashcat` & `decode` for this challenge.
 2.  Save the hash then crack with `hashcat`.
 
 ```bash
-hashcat -m 0 -a 0 -o cracked2.txt 2hash.txt wordlist.txt
+hashcat --show -m 0 -a 0 -o cracked2.txt 2hash.txt wordlist.txt
 ```
 
+- `--show` - to display already cracked hashes from the potfile.
 - `-m 0` – Hash type 0 = MD5.
 - `-a 0` – Attack mode 0 = dictionary attack (tries passwords from a wordlist).
 
