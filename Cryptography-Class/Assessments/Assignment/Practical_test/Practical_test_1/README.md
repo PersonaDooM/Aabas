@@ -32,6 +32,8 @@ gpg --full-generate-key
 
 ![alt text](screenshot/Task_1/name_key.png)
 
+**After create a key, `gpg` will ask us to put a password for the key.*
+
 ---
 
 ### Result
@@ -63,5 +65,39 @@ echo "This file was encrypted by Aabas (NWS23010046)" > plaintext.txt
 gpg --encrypt --recipient maabas.mdsuji@student.gmi.edu.my plaintext.txt
 ```
 
+![alt text](screenshot/Task_2/encrypt.png)
+
 - `--recipient` : gpg will find the key that has binded with the email like key id.
+
+*after encrypt.
+
+```bash
+gpg: encrypted with 4096-bit RSA key, ID BA006ABD5FF03EB9, created 2025-05-16
+      "Muhammad Aabas Bin Md Suji (Practical_test_1) <maabas.mdsuji@student.gmi.edu.my>"
+```
+
+---
+
+### Decrypt ciphertext
+
+```bash
+gpg --output decrypted.txt --decrypt plaintext.txt.gpg
+```
+
+![alt text](screenshot/Task_2/decrypt.png)
+
+- `--outout` : make a output from decryption.
+
+Then we need to enter the password.
+
+---
+
+### Result
+
+![alt text](screenshot/Task_2/output.png)
+
+---
+
+## ✅ Task 3: Sign and Verify a Message
+
 
