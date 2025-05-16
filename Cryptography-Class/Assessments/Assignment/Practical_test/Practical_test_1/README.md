@@ -187,3 +187,32 @@ PS C:\Users\aabas\.ssh> ssh aabas@192.168.157.145 "echo NWS23010046 > Aabas.txt"
 
 ## ✅ Task 5: Hash Cracking Challenge
 
+Objective: Crack provided hashes.
+
+- `SnZlcmV4IEF2IEpmcmNyZSBFeiBCcnJl`
+- `7b77ca1e2b3e7228a82ecbc7ca0e6b52`
+- `e583cee9ab9d7626c970fd6e9938fcb2d06fbbd12f1c1a3c6902a215808c825c`
+
+---
+
+### Hash 1 :
+
+Im using CyberChef & Decode here.
+
+1. Identify the hash
+
+![alt text](image.png)
+
+
+2. decrypt with cyber chef.
+
+![alt text](screenshot/Task_5/1_base64_d.png)
+
+
+3. Indentify again and found out the output is in Rot 9.
+
+*Result
+![alt text](screenshot/Task_5/1_flag.png)
+
+---
+
