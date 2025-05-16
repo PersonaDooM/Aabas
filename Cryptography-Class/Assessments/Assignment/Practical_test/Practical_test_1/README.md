@@ -14,8 +14,17 @@ This repository contains the results and evidence of five key tasks involving GP
 
 - **Key Type:** RSA & RSA  
 - **Key Size:** 4096 bits  
-- **Expiry:** 1 year  
-- **Command Used:**
-  ```bash
-  gpg --full-generate-key
-  gpg --list-keys
+- **Expiry:** 1 year
+
+---
+
+### Create RSA key pair 
+
+Generate key with `gpg`.
+
+```bash
+gpg --full-generate-key
+```
+
+- `--full-generate-key`: This tells GPG to guide you through a detailed key creation process.
+
