@@ -148,7 +148,7 @@ ssh-keygen -C "Aabas-NWS23010046"
 2. Copy your public key and paste `/.ssh/authorized_keys (Kali)`.
 
 ```bash
-type C:\Users\Aabas\.ssh\id_rsa.pub
+cat .\id_ed25519.pub
 ```
 
 
