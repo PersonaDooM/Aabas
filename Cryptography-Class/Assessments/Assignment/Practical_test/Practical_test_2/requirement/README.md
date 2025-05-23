@@ -55,3 +55,11 @@ Install via `pip`:
 ```bash
 pip install uncompile6
 ```
+
+---
+
+# 📌 5. Install VS Code
+
+1. Go to: https://code.visualstudio.com
+
+2. `Install`
