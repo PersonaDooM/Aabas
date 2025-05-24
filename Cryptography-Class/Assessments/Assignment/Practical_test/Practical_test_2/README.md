@@ -237,7 +237,7 @@ exit(1)
 
 ```
 
-Here `folder = r"<Your locked_files>"`, I make a hardcode but to post in Git i dont show the directory cause of my privacy purpose :).
+Here `folder = r"<Your locked_files>"`, I make a hardcode directory but to post in Git i dont show the directory cause of my privacy purpose :).
 
 ---
 
