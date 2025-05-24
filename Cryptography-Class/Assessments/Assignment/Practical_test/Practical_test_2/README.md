@@ -125,7 +125,7 @@ Reading the Python source helps us understand the malware’s behavior and find 
 
 Identify how AES was used and what values (key, IV, ciphertext) are involved.
 
-ransomware.py [source code.](ransomware.py)
+ransomware.py [source code:](ransomware.py)
 
 ```python
 from Crypto.Cipher import AES
@@ -181,7 +181,7 @@ The goal is to write a `decryption script` to get the `original plaintext`.
 
 Let's tell chatgpt to make a decrypt code because im running out of time hehe.
 
-#### Decryption Script:
+#### Decrypt.py [source code:](Decrypt.py)
 
 ```python
 from Crypto.Cipher import AES
