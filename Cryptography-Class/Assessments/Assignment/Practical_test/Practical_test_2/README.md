@@ -1,12 +1,19 @@
 # 🔬 Malware Analysis Report – Python-based Executable with AES Encryption
 
-## 📝 Task Description
+Name : Muhammad Aabas Bin Md Suji
 
-This task involves analyzing a Python-based malware sample compiled into a `.exe` file. The goal is to:
-- Decompile the `.exe` into readable Python code
-- Identify AES encryption logic
-- Reverse-engineer the code to create a decryption script
-- Retrieve the original plaintext from the given ciphertext
+# 📌 Scenario
+
+## 🔐 Ransomware is a malicious real-world application of cryptography. In this exercise, you will act as a cryptography and malware reverse engineer, tasked with analyzing a suspicious binary that simulates ransomware behavior. Your job is to analyze, extract, and break the cryptography used in this malware, and then write a decryption script to recover the victim's files, and save the world.
+
+---
+# ⚠️ Important Notes
+
+- This is NOT real ransomware. It is a simulated binary created for educational purposes only.
+- However, it mimics real cryptographic behavior used in ransomware.
+- Even though it's safe, please use secure practices:
+- Analyze it in a dedicated VM or sandbox environment.
+- Avoid running unknown ".exe" directly on your host OS.
 
 ---
 
@@ -26,7 +33,10 @@ See the guides to install the tools [here.](requirement/README.md)
 
 ## 📁 Initial File
 
-- `malware.exe` – suspected to be compiled with PyInstaller
+- `Download File`: simulated_ransomware.7z
+- `Password`: semogaberjaya
+- `SHA-256 Hash`: 29cde12c20b7e712a4a412487157f9e46de46455da3d136ad84e41c479ac7c31
+
 
 ---
 
