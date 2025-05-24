@@ -35,7 +35,7 @@ def decrypt_file(filepath):
 
 # 4. Main process
 if __name__ == "__main__":
-    folder = r"C:\Users\aabas\OneDrive - Accord Investments\Documents\GitHub\Aabas\Cryptography-Class\Assessments\Assignment\Practical_test\Practical_test_2\locked_files"
+    folder = r"<Your locked_files>"
 
     for filename in os.listdir(folder):
         if filename.endswith(".enc"):
@@ -46,5 +46,5 @@ if __name__ == "__main__":
                 print(f"[-] Failed to decrypt {filename}: {e}")
 
 if not os.path.exists(folder):
-    print(f"[-] Folder '{folder}' tidak wujud!")
+    print(f"[-] Folder '{folder}' not found")
 exit(1)
