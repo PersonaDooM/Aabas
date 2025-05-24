@@ -266,3 +266,4 @@ We can see the code is generate the plaintext.
 - The malware used `AES CBC` encryption to obfuscate its payload
 - Static + dynamic analysis allowed retrieval of the original message
 - This task demonstrates basic reverse engineering and cryptography understanding
+- For actual malware analysis, makesure use `VM` and setup a `snapshot` the `VM`.
