@@ -56,6 +56,8 @@ Install via `pip`:
 pip install uncompile6
 ```
 
+> If system tells you to upgrade pip, go upgrade first and install again.
+
 ---
 
 # 📌 5. Install VS Code
