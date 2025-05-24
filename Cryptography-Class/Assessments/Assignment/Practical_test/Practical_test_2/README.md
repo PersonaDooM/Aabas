@@ -1,6 +1,6 @@
 # 🔬 Malware Analysis Report – Python-based Executable with AES Encryption
 
-Name : Muhammad Aabas Bin Md Suji
+**Name : Muhammad Aabas Bin Md Suji**
 
 # 📌 Scenario
 
