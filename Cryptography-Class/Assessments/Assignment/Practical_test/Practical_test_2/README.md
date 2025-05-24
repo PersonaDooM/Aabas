@@ -37,7 +37,9 @@ See the guides to install the tools [here.](requirement/README.md)
 - `Password`: semogaberjaya
 - `SHA-256 Hash`: 29cde12c20b7e712a4a412487157f9e46de46455da3d136ad84e41c479ac7c31
 
+![alt text](Screenshot/virus_detail.png)
 
+>Check with virus total
 ---
 
 ## 🔍 Step-by-Step Analysis
@@ -48,8 +50,9 @@ See the guides to install the tools [here.](requirement/README.md)
 
 Open `VirusTotal` in hte browser then analys the file.
 
+![alt text](Screenshot/virus_detail.png)
 
-> photo
+>Check with virus total
 
 - We need to identify if the file is save or not.
 
@@ -61,14 +64,10 @@ Open `DIE` and upload the file to see the structure.
 
 > Use DIE to identify how the `.exe` file was packed or compiled.
 
-```text
-
-```
+![](Screenshot/die_analysis.png)
 
 Result:
-- File Type: PE32 executable
-- Compiler: PyInstaller v3.6
-- Entropy: Medium
+- Language : python
 
 **Why this is important:**
 Knowing that PyInstaller was used helps us decide the correct extractor tool (`pyinstxtractor`) to use.
@@ -84,9 +83,15 @@ Knowing that PyInstaller was used helps us decide the correct extractor tool (`p
 **Purpose:**  
 Extract the compiled Python bytecode files from the `.exe`.
 
+Command:
+
 ```bash
-python pyinstxtractor.py malware.exe
+python pyinstxtractor.py simulated_ransomware.exe
 ```
+
+- we let `pyinstxtractor.py` to extract `simulated_ransomware.exe`
+
+![alt text](Screenshot/extract.py.png)
 
 **Expected Output:**
 
@@ -96,13 +101,6 @@ Inside it: `malware.pyc`, possibly other `.pyc` files.
 **Why this is important:**
 We need .pyc files to decompile and view the original code logic.
 
-Possible Errors:
-
-- ❌ “Invalid PyInstaller archive” → The `.exe` file may be encrypted, corrupted, or not PyInstaller.
-- ✅ Solution: Confirm version using DIE and try adjusting `pyinstxtractor.py` manually (specify version).
-- ❌ Python version mismatch → If pyinstxtractor fails silently.
-- ✅ Solution: Use Python 3.8 as most PyInstaller v3 apps work with it.
-
 ---
 
 ### 🔓 4. Decompile .pyc to .py
@@ -110,17 +108,12 @@ Possible Errors:
 Convert `.pyc` files back into readable `.py` source code.
 
 ```bash
-uncompyle6 -o . __main__.pyc
+uncompyle6 -o . simulated_ransomware.pyc > ransomware.py
 ```
 
+- uncompyle6 output will be save in `ransomware.py`
+
 Reading the Python source helps us understand the malware’s behavior and find encryption logic.
-
-**Possible Errors:**
-
-- ❌ “Unsupported magic number” → The .pyc was made with an incompatible Python version.
-- ✅ Solution: Try another version of Python for decompilation (3.7, 3.9).
-- ❌ “Decompilation failed” → The bytecode is malformed or obfuscated.
-- ✅ Solution: Try decompyle3 or use online decompilers.
 
 ---
 
@@ -130,7 +123,48 @@ Reading the Python source helps us understand the malware’s behavior and find 
 
 Identify how AES was used and what values (key, IV, ciphertext) are involved.
 
+ransomware.py [source code.](ransomware.py)
+
 ```python
+from Crypto.Cipher import AES
+import os
+from hashlib import sha256
+KEY_SUFFIX = "RahsiaLagi"
+KEY_STR = f"Bukan{KEY_SUFFIX}"
+KEY = sha256(KEY_STR.encode()).digest()[None[:16]]
+
+def pad(data):
+    pad_len = 16 - len(data) % 16
+    return data + bytes([pad_len]) * pad_len
+
+
+def encrypt_file(filepath):
+    with open(filepath, "rb") as f:
+        plaintext = f.read()
+    padded = pad(plaintext)
+    cipher = AES.new(KEY, AES.MODE_ECB)
+    ciphertext = cipher.encrypt(padded)
+    with open(filepath + ".enc", "wb") as f:
+        f.write(ciphertext)
+    os.remove(filepath)
+
+
+if __name__ == "__main__":
+    folder = "locked_files/"
+    os.makedirs(folder, exist_ok=True)
+    sample_files = [
+     "maklumat1.txt", "maklumat2.txt", "maklumat3.txt"]
+    contents = [
+     "Assalamualaikum semua, pelajar kursus Cryptography semester 5.\nKeselamatan siber bergantung kepada kebijaksanaan anda dalam memahami kriptografi.\nGunakan ilmu ini untuk melindungi data, sistem, dan masa depan teknologi.\nJadilah perisai digital yang berintegriti dan berkemahiran.",
+     "Setiap algoritma yang anda pelajari hari ini adalah benteng pertahanan esok.\nKuasa penyulitan (encryption) bukan hanya tentang kod, tetapi amanah dalam menjaga maklumat.\nTeruskan usaha, dunia digital menanti kepakaran anda!",
+     "Semoga ilmu yang dipelajari menjadi manfaat kepada semua.\nGunakan kepakaran anda untuk kebaikan, bukan kemudaratan.\nSemoga berjaya di dunia dan akhirat!\n\nAdli, Lecturer Part Time, Feb-Mei 2025"]
+    for name, content in zip(sample_files, contents):
+        path = os.path.join(folder, name)
+        with open(path, "w") as f:
+            f.write(content)
+        encrypt_file(path)
+
+# okay decompiling .\simulated_ransomware.pyc
 ```
 
 This gives us the information we need to write a decryption script.
