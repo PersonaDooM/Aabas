@@ -105,6 +105,8 @@ We need .pyc files to decompile and view the original code logic.
 
 ### 🔓 4. Decompile .pyc to .py
 
+**Disclamer, start from here i use my own windows because my windows 10 need to troubleshoot with corrupted pip so i cant install compyle6 ;(.*
+
 Convert `.pyc` files back into readable `.py` source code.
 
 ```bash
