@@ -123,9 +123,9 @@ Reading the Python source helps us understand the malware’s behavior and find 
 
 #### 🔐 Identified AES Encryption Code:
 
-Identify how AES was used and what values (key, IV, ciphertext) are involved.
+Identify how AES was used and what `values` (key, IV, ciphertext) are involved.
 
-ransomware.py [source code:](ransomware.py)
+#### ransomware.py [source code:](ransomware.py)
 
 ```python
 from Crypto.Cipher import AES
