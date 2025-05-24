@@ -243,8 +243,21 @@ Here `folder = r"<Your locked_files>"`, I make a hardcode but to post in Git i d
 
 ## 🧾 Result
 
+We can see the code is generate the plaintext.
 
+![alt text](Screenshot/result.png)
 
+#### plaintext 1
+
+![alt text](Screenshot/maklumat1.png)
+
+#### plaintext 2
+
+![alt text](Screenshot/maklumat2.png)
+
+#### plaintext 3
+
+![alt text](Screenshot/maklumat3.png)
 
 ---
 
